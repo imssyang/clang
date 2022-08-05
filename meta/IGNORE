@@ -1,5 +1,20 @@
 # Not archived by opt
 archive
+bin/bugpoint
+bin/clang-14
+bin/clang-check
+bin/clang-linker-wrapper
+bin/clang-repl
+bin/clang-scan-deps
+bin/clang-tidy
+bin/dsymutil
+bin/llc
+bin/llvm-c-test
+bin/llvm-dwp
+bin/llvm-lto
+bin/llvm-lto2
+bin/llvm-reduce
+bin/opt
 lib/libclang-cpp.so.14
 lib/libclang.so.14.0.6
 lib/liblldb.so.14.0.6
