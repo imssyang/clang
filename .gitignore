@@ -1,2 +1,5 @@
-# Files of archive
 archive
+bin
+include
+lib
+share

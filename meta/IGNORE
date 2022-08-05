@@ -1,7 +1,7 @@
 # Not archived by opt
 archive
-cache
-data
-log
-run
+lib/libclang-cpp.so.14
+lib/libclang.so.14.0.6
+lib/liblldb.so.14.0.6
+lib/libLTO.so.14
 
