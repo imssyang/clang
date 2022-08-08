@@ -42,8 +42,6 @@ _unarchive_item() {
 }
 
 _large_files=(
-  $HOME/lib/libclang-cpp.so.14
-  $HOME/lib/libLLVM-14.so
 )
 
 init() {
