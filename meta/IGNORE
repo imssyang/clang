@@ -17,6 +17,7 @@ bin/llvm-reduce
 bin/opt
 lib/libclang-cpp.so.14
 lib/libclang.so.14.0.6
+lib/libLLVM-14.so
 lib/liblldb.so.14.0.6
 lib/libLTO.so.14
 sample

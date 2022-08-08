@@ -59,6 +59,7 @@ _large_files=(
   $HOME/bin/opt
   $HOME/lib/libclang-cpp.so.14
   $HOME/lib/libclang.so.14.0.6
+  $HOME/lib/libLLVM-14.so
   $HOME/lib/liblldb.so.14.0.6
   $HOME/lib/libLTO.so.14
 )
