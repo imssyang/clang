@@ -2,7 +2,7 @@
 
 APP=llvm
 HOME=/opt/$APP
-VER=v1406
+VER=debian10-v14.0.6
 
 _create_symlink() {
   src=$1
@@ -42,26 +42,8 @@ _unarchive_item() {
 }
 
 _large_files=(
-  $HOME/bin/bugpoint
-  $HOME/bin/clang-14
-  $HOME/bin/clang-check
-  $HOME/bin/clang-linker-wrapper
-  $HOME/bin/clang-repl
-  $HOME/bin/clang-scan-deps
-  $HOME/bin/clang-tidy
-  $HOME/bin/dsymutil
-  $HOME/bin/llc
-  $HOME/bin/llvm-c-test
-  $HOME/bin/llvm-dwp
-  $HOME/bin/llvm-lto
-  $HOME/bin/llvm-lto2
-  $HOME/bin/llvm-reduce
-  $HOME/bin/opt
   $HOME/lib/libclang-cpp.so.14
-  $HOME/lib/libclang.so.14.0.6
   $HOME/lib/libLLVM-14.so
-  $HOME/lib/liblldb.so.14.0.6
-  $HOME/lib/libLTO.so.14
 )
 
 init() {
