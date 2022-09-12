@@ -1,36 +1,22 @@
-all: test1 test2 test3 test4 test5
+CC = clang
+CXX = clang++
+CFLAGS = -O3
+CXXFLAGS = $(CFLAGS)
 
-build-test1:
-	clang++ -o test1 test1.cpp
+all: all_c all_cxx
+all_c: c/test1 c/test2 c/test3 c/test4 c/test5
+all_cxx: cxx/test1 cxx/test2 cxx/test3 cxx/test4 cxx/test5
 
-build-test2:
-	clang++ -o test2 test2.cpp
+c cxx:
+	mkdir -p $@
 
-build-test3:
-	clang++ -o test3 test3.cpp
+c/%: %.c | c
+	$(CC) -o $@ $^ $(CFLAGS)
+	./$@
 
-build-test4:
-	clang++ -o test4 test4.cpp
+cxx/%: %.cpp | cxx
+	$(CXX) -o $@ $^ $(CXXFLAGS)
+	./$@
 
-build-test5:
-	clang++ -o test5 test5.cpp
-
-test1: build-test1
-	./test1
-	rm -rf test1
-
-test2: build-test2
-	./test2
-	rm -rf test2
-
-test3: build-test3
-	./test3
-	rm -rf test3
-
-test4: build-test4
-	./test4
-	rm -rf test4
-
-test5: build-test5
-	./test5
-	rm -rf test5
+clean:
+	@rm -rf c cxx
