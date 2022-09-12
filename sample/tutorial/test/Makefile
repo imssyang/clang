@@ -1,7 +1,14 @@
+DEFAULT = cxx
 CC = clang
 CXX = clang++
 CFLAGS = -O3
 CXXFLAGS = $(CFLAGS)
+
+ifeq ($(DEFAULT), c)
+  OUT = c
+else
+  OUT = cxx
+endif
 
 all: all_c all_cxx
 all_c: c/test1 c/test2 c/test3 c/test4 c/test5
@@ -12,11 +19,12 @@ c cxx:
 
 c/%: %.c | c
 	$(CC) -o $@ $^ $(CFLAGS)
-	./$@
 
 cxx/%: %.cpp | cxx
 	$(CXX) -o $@ $^ $(CXXFLAGS)
-	./$@
+
+%: $(OUT)/%
+	./$(OUT)/$@
 
 clean:
 	@rm -rf c cxx
