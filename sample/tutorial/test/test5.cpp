@@ -1,25 +1,22 @@
-#include <iostream>
-#include <typeinfo>
+#include <assert.h>
+#include <inttypes.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-using namespace std;
-
-int main() {
-    int i = 1;
-    float j = 1.0;
-    char c = 'a';
-
-    const type_info& ti = typeid(i);
-    const type_info& tj = typeid(j);
-    const type_info& tk = typeid(i + j);
-    const type_info& tc = typeid(c);
-
-    cout << ti.name() << endl; // i
-    cout << tj.name() << endl; // f
-    cout << tk.name() << endl; // f
-    cout << tc.name() << endl; // c
-    cout << (ti == tj) << endl; // 0
-    cout << (tk == tj) << endl; // 1
-
-    return 0;
+static void memset_16aligned(void *space, char byte, size_t nbytes)
+{
+    assert((nbytes & 0x0F) == 0);
+    assert(((uintptr_t)space & 0x0F) == 0);
+    memset(space, byte, nbytes);  // Not a custom implementation of memset()
 }
 
+int main(void)
+{
+    void *mem = malloc(1024+15);
+    void *ptr = (void *)(((uintptr_t)mem+15) & ~ (uintptr_t)0x0F);
+    printf("0x%08" PRIXPTR ", 0x%08" PRIXPTR "\n", (uintptr_t)mem, (uintptr_t)ptr);
+    memset_16aligned(ptr, 0, 1024);
+    free(mem);
+    return(0);
+}
