@@ -1,6 +1,6 @@
 #!/bin/bash
 
-APP=llvm
+APP=clang
 HOME=/opt/$APP
 VER=debian10-v14.0.6
 

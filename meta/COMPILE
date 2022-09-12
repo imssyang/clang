@@ -3,7 +3,7 @@ cd llvm-project-14.0.6
 mkdir build && cd build
 
 cmake -Wno-dev -G "Unix Makefiles" \
-  -DCMAKE_INSTALL_PREFIX=/opt/llvm \
+  -DCMAKE_INSTALL_PREFIX=/opt/clang \
   -DCMAKE_BUILD_TYPE=Release \
   -DLLVM_ENABLE_PROJECTS="clang;clang-tools-extra;libclc;lldb" \
   -DLLVM_ENABLE_RUNTIMES="libc;libcxx;libcxxabi;libunwind" \

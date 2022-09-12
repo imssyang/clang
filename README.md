@@ -1,3 +1,3 @@
-# llvm
+# clang
 
-/opt/llvm
+/opt/clang
