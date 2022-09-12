@@ -2,4 +2,5 @@ archive
 bin
 include
 lib
+sample/.vscode/
 share
