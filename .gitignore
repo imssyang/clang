@@ -2,7 +2,9 @@ archive
 bin
 include
 lib
+sample/*
 sample/.vscode/
-sample/
 !sample/**/*.[c,cpp,md]
+!sample/make/
+!sample/**/CMakeLists.txt
 share
