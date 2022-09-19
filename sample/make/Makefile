@@ -13,6 +13,17 @@ blah.o: blah.c
 blah.c:
 	echo "int main() { return 0; }" > blah.c
 
+files := file1 file2
+multifile: $(files)
+	echo $(files)
+file1:
+	echo 1
+file2:
+	echo 2
+
+print: $(wildcard *.c)
+	ls -la  $?
+
 clean:
 	rm -rf hello
 	rm -rf blah blah.o
