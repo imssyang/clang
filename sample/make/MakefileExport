@@ -1,0 +1,23 @@
+# Run this with "export shell_env_var='I am an environment variable'; make"
+all:
+	# Print out the Shell variable
+	@echo $$shell_env_var
+
+	# Print out the Make variable
+	@echo $(shell_env_var)
+
+	@echo $(shell_env_var_inside)
+	@echo $$shell_env_var_inside
+
+	@echo $(one)
+	@echo $$one
+	@echo $(two)
+	@echo $$two
+
+# Note the variable and exports, are set/affected globally.
+shell_env_var_inside=shell env var that created inside of Make
+export shell_env_var_inside # should
+
+one=1
+two=2
+.EXPORT_ALL_VARIABLES:

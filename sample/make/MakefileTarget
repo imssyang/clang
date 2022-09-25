@@ -1,4 +1,7 @@
-all: f1.o f2.o
+%.c: one = cool
 
-f1.o f2.o:
-	echo $@
+this.c: 
+	echo one is defined: $(one)
+
+other:
+	echo one is nothing: $(one)

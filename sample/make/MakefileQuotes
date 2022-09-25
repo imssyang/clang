@@ -1,0 +1,11 @@
+a := 1
+b := '2'
+c := a b
+d := hello   # with 3 space
+all: $(c)
+	echo $(c)
+	echo [$(d)]
+a:
+	echo '$a' '$(a)'
+b:
+	echo $b ${b}
