@@ -1,5 +1,14 @@
 a := 1
 b := '2'
-all:
+c := a b
+d := hello   # with 3 space
+all: $(c) e
+	echo $(c)
+	echo [$(d)]
+a:
 	echo '$a' '$(a)'
+b:
 	echo $b ${b}
+e:
+	echo Too long, so \
+		use multiple lines!
